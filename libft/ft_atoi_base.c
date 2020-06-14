@@ -13,7 +13,6 @@
 #include "libft.h"
 #include <stdio.h>
 
-
 unsigned long     ft_atoi_base(char *str, int base)
 {
     int         i;

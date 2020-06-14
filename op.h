@@ -23,6 +23,7 @@
 #define CHAMP_MAX_SIZE			(MEM_SIZE / 6)
 
 #define COMMENT_CHAR			'#'
+#define COMMENT_CHAR_ALT			';'
 #define LABEL_CHAR				':'
 #define DIRECT_CHAR				'%'
 #define SEPARATOR_CHAR			','
@@ -32,7 +33,7 @@
 #define NAME_CMD_STRING			".name"
 #define COMMENT_CMD_STRING		".comment"
 
-#define REG_NUMBER				16
+#define REG_NUMBER				99
 
 #define CYCLE_TO_DIE			1536
 #define CYCLE_DELTA				50

@@ -43,6 +43,8 @@ typedef struct              s_parce
 	t_code					*cd;
 	t_code					*cure;
 	unsigned				size_code;
+	int						name;
+	int						comment;
 }							t_parce;
 
 void						parce(t_parce *pr, header_t *head);

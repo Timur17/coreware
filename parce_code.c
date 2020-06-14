@@ -67,7 +67,7 @@ void	add_label(t_parce *pr)
 	creat_list(pr, new);
 	*pr->i =  i + 1;
 	ft_skip_space(pr);
-	if (pr->line[*pr->i] && pr->line[*pr->i] != COMMENT_CHAR)
+	if (pr->line[*pr->i] && pr->line[*pr->i] != COMMENT_CHAR && pr->line[*pr->i] != COMMENT_CHAR_ALT)
 		{
 			if (check_command(pr) == 0)
 				ft_error_pos("ERROR: Unexpected symvol after label", pr->row, *pr->i);

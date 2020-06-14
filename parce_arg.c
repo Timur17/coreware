@@ -36,7 +36,7 @@ void		check_separator(t_parce *pr)
 	ft_skip_space(pr);
 	if (pr->line[*pr->i] == SEPARATOR_CHAR)
 	 	skip_separator(pr);
-	else if (pr->line[*pr->i] == COMMENT_CHAR)
+	else if (pr->line[*pr->i] == COMMENT_CHAR || pr->line[*pr->i] == COMMENT_CHAR_ALT)
 	 	skip_comment(pr);
 	else
 	{
@@ -66,7 +66,7 @@ void		check_reg(t_parce *pr, int *arg, t_code *new)
 	 		ft_error_pos("ERROR: invalid T_REG", pr->row, *pr->i);
 	str = ft_strsub(pr->line, i + 1, len);
 	num = ft_atoi(str);
-	if (num <= 0 || num > 16)
+	if (num <= 0 || num > REG_NUMBER)
 			ft_error_pos("ERROR: invalid T_REG", pr->row, *pr->i);
 	free (str);
 	str = ft_strsub(pr->line, i, len + 1);
@@ -171,7 +171,7 @@ void		check_arg(t_parce *pr, t_code *new)
 	while (pr->line[*pr->i] && *arg <= 3)
 	{
 		ft_skip_space(pr);
-		if (pr->line[*pr->i] == COMMENT_CHAR)
+		if (pr->line[*pr->i] == COMMENT_CHAR || pr->line[*pr->i] == COMMENT_CHAR_ALT)
 			skip_comment(pr);
 		if (pr->line[*pr->i] == 'r')
 			check_reg(pr, arg, new);

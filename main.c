@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main1.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
+/*   Updated: 2020/06/13 12:17:09 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "asm.h"
 
-t_list			*init_list(char *str)
+t_list					*init_list(char *str)
 {
-	t_list	*new;
+	t_list				*new;
 
 	if (!(new = (t_list *)ft_memalloc(sizeof(t_list))))
 		ft_error("ERROR malloc");
@@ -10,9 +22,9 @@ t_list			*init_list(char *str)
 	new->content_size = 0;
 	new->next = NULL;
 	return (new);
-}			
+}
 
-void	init(t_parce *pr)
+void					init(t_parce *pr)
 {
 	ft_bzero(pr, sizeof(pr));
 	pr->cnt = 1;
@@ -22,11 +34,13 @@ void	init(t_parce *pr)
 	pr->cd = NULL;
 	pr->cure = NULL;
 	pr->size_code = 0;
+	pr->comment = 0;
+	pr->name = 0;
 }
 
-t_code	*init_code()
+t_code					*init_code(void)
 {
-	t_code	*code;
+	t_code				*code;
 
 	if (!(code = (t_code *)ft_memalloc(sizeof(t_code))))
 		ft_error("ERROR malloc");
@@ -47,17 +61,17 @@ t_code	*init_code()
 	return (code);
 }
 
-void		init_hd(header_t *head)
+void					init_hd(header_t *head)
 {
 	ft_bzero(head->prog_name, sizeof(head->prog_name));
 	ft_bzero(head->comment, sizeof(head->comment));
 	head->magic = 0xea83f3;
 }
 
-int main(int ac, char **av) 
+int						main(int ac, char **av)
 {
-	t_parce			pr;
-	header_t		head;
+	t_parce				pr;
+	header_t			head;
 
 	init(&pr);
 	init_hd(&head);
@@ -68,16 +82,7 @@ int main(int ac, char **av)
 	parce(&pr, &head);
 	if (close(pr.fd) < 0)
 		ft_error("Close error");
-	// int test = ft_valid_value("-65536", 2);
-	// printf("test = %d\n", test);
 	binary_code(&pr, av[1], &head);
-	// char *num = ft_itoa_base('', 16);
-	// printf ("------%s\n", num);
-	// print_line(&pr.list);
 	ft_free(&pr);
 	return (0);
-	// Не работает если команды в нчале или между именем и комментарием
-	// выяснить макс и мин цифры
-	// "Writing output program to %s\n", filename
-	// non_printatble_char_in_name_VALID
 }

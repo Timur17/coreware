@@ -11,13 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdlib.h"
 
 int		ft_valid_value(const char *str, int size)
 {
     unsigned long long max;
     unsigned long long num;
     int          i;
-
+	
+	printf("2test\n");
     i = 0;
     if (size == 2)
         max = 65535;
@@ -29,6 +31,7 @@ int		ft_valid_value(const char *str, int size)
 	{
 		num = num * 10 + (str[i] - 48);
 		i++;
+		printf("%d\n", num);
 		if (num > max)
 			return (1);
 	}

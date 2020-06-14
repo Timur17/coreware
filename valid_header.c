@@ -60,7 +60,7 @@ char	*ft_search_end(t_parce *pr)
 	}
 	if ((str = ft_search_end2(pr, str)) == NULL)
 		ft_error("ERROR: miss ends quotes in name or comment");
-	str = ft_strdel_char(str, '\n');
+	//str = ft_strdel_char(str, '\n'); Если  не нужны \n в имя и комментарии
 	return(str);
 }
 

@@ -1,4 +1,5 @@
 #include "asm.h"
+#define MAX 922337203685477580
 
 int		ft_valid_value(const char *str, int size)
 {
@@ -48,6 +49,8 @@ void    print_code(char *str)
     printf(" ");
     f++;
   }
+      if (f == 8)
+      printf("\n");
   printf("%s\n", str + i);
 }
 
@@ -72,6 +75,8 @@ void            write_str(char *str, int fd)
     ft_putchar_fd(' ', fd);
     f++;
   }
+  if (f == 8)
+  ft_putchar_fd(n, fd);
   ft_putstr_fd(str + i, fd);
 }
 
