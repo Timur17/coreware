@@ -49,7 +49,7 @@ typedef struct              s_parce
 
 void						parce(t_parce *pr, header_t *head);
 
-char						*full_str(t_parce *pr, char *dst, int d, int len);
+void						full_str(t_parce *pr, header_t *head, int d, int len);
 
 int							read_file(t_parce *pr);
 
@@ -58,7 +58,7 @@ void						ft_error(char *str);
 void						ft_error_pos(char *str, int row, int col);
 void						ft_error_head(header_t *head);
 void						ft_error_arg(t_parce *pr, int arg, char *type1, char *type2);
-void						error_size_code(t_parce *pr);
+void						error_size_code(t_parce *pr, header_t *head);
 void						ft_error_label(char *str, int flag);
 void						valid_labels(t_parce *pr, char *lab);
 
@@ -80,10 +80,14 @@ void						must_be_reg_ind(t_parce *pr, t_code *new, int arg);
 
 t_code						*init_code();
 void						creat_list(t_parce *pr, t_code *new);
-void						ft_skip_space(t_parce *pr);
 
+void						ft_skip_space(t_parce *pr);
 void						skip_comment(t_parce *pr);
-int							ft_skip_comment(t_parce *pr);
+void						skip_separator(t_parce *pr);
+
+void						add_arg(t_code *new, char *str, int *arg, char *type);
+char						*add_arg_lable(t_parce *pr);
+char						*add_arg_digit(t_parce *pr);
 
 void						binary_code(t_parce *pr, char *av, header_t *head);
 void 						full_command(t_parce *pr, char *str, int i);
@@ -110,6 +114,10 @@ t_list						*init_list(char *str);
 
 // void						ft_free(t_parce *pr, header_t *head);
 void						ft_free(t_parce *pr);
+
+void						ft_skip_space(t_parce *pr);
+void						skip_comment(t_parce *pr);
+
 
 
 void	print_line(t_list *list);

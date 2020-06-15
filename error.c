@@ -35,32 +35,36 @@ void		ft_error_pos(char *str, int row, int col)
 	exit(EXIT_FAILURE);
 }
 
-void		ft_error_head(header_t *head)
-{
-	if (!(*head->prog_name))
-		ft_error("EROOR: lack name");
-	if (!(*head->comment))
-		ft_error("EROOR: lack comment");
-}
+// void		ft_error_head(header_t *head)
+// {
+// 	if (!(*head->prog_name))
+// 		ft_error("EROOR: lack name");
+// 	if (!(*head->comment))
+// 		ft_error("EROOR: lack comment");
+// }
 
-void        error_size_code(t_parce *pr)
+void        error_size_code(t_parce *pr, header_t *head)
 {
-    if (pr->size_code > CHAMP_MAX_SIZE)
-      ft_error("Size of code is too big");
+    // if (pr->size_code > CHAMP_MAX_SIZE)
+    //   ft_error("Size of code is too big");
 	if (pr->size_code == 0)
       ft_error("ERROR:there are no commands");
+	if (ft_strlen (head->prog_name) > PROG_NAME_LENGTH)
+		ft_error("ERROR:Too big name");
+	if (ft_strlen (head->comment) > COMMENT_LENGTH)
+		ft_error("ERROR:Too big comment");
 }
 
-void		valid_labels(t_parce *pr, char *lab)
-{
-	t_code	*temp;
+// void		valid_labels(t_parce *pr, char *lab)
+// {
+// 	t_code	*temp;
 
-	temp = pr->cd;
-	while (temp)
-	{
-		if (ft_strequ(temp->label, lab))
-			ft_error_pos("Error: label isn't uniq", pr->row, -1);
-		temp = temp->next;
-	}
-}
+// 	temp = pr->cd;
+// 	while (temp)
+// 	{
+// 		if (ft_strequ(temp->label, lab))
+// 			ft_error_pos("Error: label isn't uniq", pr->row, -1);
+// 		temp = temp->next;
+// 	}
+// }
 
