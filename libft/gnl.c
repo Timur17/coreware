@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 16:50:23 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/02/23 12:52:54 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/15 23:46:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char			*ft_read(int fd, char **line, char *temp, int *f)
 	char		buf[BUFF_SIZE + 1];
 	int			ret;
 	char		*leak;
-	
+
 	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
 	{
 		buf[ret] = '\0';
@@ -59,8 +59,6 @@ int					gnl(int fd, char **line)
 {
 	int				f;
 	static char		*temp[110000];
-
-	
 
 	ERROR(line == NULL || BUFF_SIZE <= 0 || fd < 0
 			|| (fd >= 11000) || (read(fd, NULL, 0) < 0));

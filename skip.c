@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 01:01:15 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/15 23:40:25 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void				skip_comment(t_parce *pr)
 		(*pr->i)++;
 }
 
-void		skip_separator(t_parce *pr)
+void				skip_separator(t_parce *pr)
 {
 	int		i;
 

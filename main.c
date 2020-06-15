@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main1.c                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/13 12:17:09 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/15 22:31:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_code					*init_code(void)
 	return (code);
 }
 
-void					init_hd(header_t *head)
+void					init_hd(t_header *head)
 {
 	ft_bzero(head->prog_name, sizeof(head->prog_name));
 	ft_bzero(head->comment, sizeof(head->comment));
@@ -71,7 +71,7 @@ void					init_hd(header_t *head)
 int						main(int ac, char **av)
 {
 	t_parce				pr;
-	header_t			head;
+	t_header			head;
 
 	init(&pr);
 	init_hd(&head);

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 00:57:36 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/15 22:25:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int					read_file(t_parce *pr)
 	return (n);
 }
 
-void				parce(t_parce *pr, header_t *head)
+void				parce(t_parce *pr, t_header *head)
 {
 	int				i;
 

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 17:12:05 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/02/17 20:13:23 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/15 23:48:46 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncat(char *dst, const char *src, size_t n)
 {
-	size_t	i;
+	size_t				i;
 	unsigned int		len;
 
 	i = 0;

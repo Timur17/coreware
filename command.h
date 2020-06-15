@@ -1,4 +1,16 @@
-# ifndef COMMAND_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   command.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
+/*   Updated: 2020/06/15 21:25:15 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef COMMAND_H
 # define COMMAND_H
 
 # define LIVE		"live"
@@ -18,4 +30,4 @@
 # define LFORK		"lfork"
 # define AFF		"aff"
 
-# endif
+#endif

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 17:39:46 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 00:33:04 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/15 22:25:38 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	*add_name_comment(t_parce *pr)
 	return (str);
 }
 
-void	full_str(t_parce *pr, header_t *head, int d, int len)
+void	full_str(t_parce *pr, t_header *head, int d, int len)
 {
 	char	*str;
 	int		length;
