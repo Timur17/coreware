@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 17:39:46 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 22:25:38 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/19 00:00:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ char	*ft_search_end(t_parce *pr)
 	str = NULL;
 	while (pr->line[*pr->i] != '\"' && pr->line[*pr->i] != '\0')
 		(*pr->i)++;
-	str = ft_strsub(pr->line, begin, *pr->i - begin);
+	if ((str = ft_strsub(pr->line, begin, *pr->i - begin)) == NULL)
+		ft_error("ERROR: allocate memory");
 	if (pr->line[*pr->i] == '\"')
 	{
 		valid_end_line(pr, *pr->i);
@@ -75,7 +76,7 @@ char	*add_name_comment(t_parce *pr)
 	return (str);
 }
 
-void	full_str(t_parce *pr, t_header *head, int d, int len)
+void	full_header(t_parce *pr, t_header *head, int d, int len)
 {
 	char	*str;
 	int		length;

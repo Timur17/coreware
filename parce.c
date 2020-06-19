@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 22:25:20 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/18 23:50:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,9 @@ void				parce(t_parce *pr, t_header *head)
 		|| pr->line[*pr->i] == COMMENT_CHAR_ALT || pr->line[*pr->i] == '\0')
 			continue ;
 		else if (ft_strncmp(pr->line + *pr->i, NAME_CMD_STRING, 5) == 0)
-			full_str(pr, head, 5, PROG_NAME_LENGTH);
+			full_header(pr, head, 5, PROG_NAME_LENGTH);
 		else if (ft_strncmp(pr->line + *pr->i, COMMENT_CMD_STRING, 8) == 0)
-			full_str(pr, head, 8, COMMENT_LENGTH);
+			full_header(pr, head, 8, COMMENT_LENGTH);
 		else if (check_label(pr) && pr->comment == 1 && pr->name == 1)
 			add_label(pr);
 		else if (check_command(pr) && pr->comment == 1 && pr->name == 1)

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 22:31:37 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/18 23:33:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int						main(int ac, char **av)
 		ft_error("Usage : ./asm <filename>");
 	if ((pr.fd = open(av[1], O_RDONLY)) < 0)
 		ft_error("Open error");
+	check_filename(av[1]);
 	parce(&pr, &head);
 	if (close(pr.fd) < 0)
 		ft_error("Close error");

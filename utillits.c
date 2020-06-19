@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:47:19 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 23:42:37 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/18 23:47:16 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,21 @@
 	unsigned int			g_i;
 	unsigned long long		g_num;
 
-char			*replace_name(char *av, int size)
+void						check_filename(char *name)
+{
+	int						len;
+
+	len = ft_strlen(name);
+	if (len < 2 || name[len - 1] != 's' || name[len - 2] != '.')
+		ft_error("ERROR: file extension is wrong");
+}
+
+char						*replace_name(char *av, int size)
 {
 	char					*name;
 
 	name = ft_strnew(size + 2);
-	ft_strncpy(name,av, size -1);
+	ft_strncpy(name, av, size - 1);
 	name[size - 1] = 'c';
 	name[size++] = 'o';
 	name[size] = 'r';
@@ -34,8 +43,8 @@ char			*replace_name(char *av, int size)
 	return (name);
 }
 
-void			int32_to_bytecode(char *data, int32_t pos,
-					int32_t value, size_t size)
+void						int32_to_bytecode(char *data, int32_t pos,
+							int32_t value, size_t size)
 {
 	int8_t					i;
 
