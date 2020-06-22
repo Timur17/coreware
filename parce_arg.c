@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 01:17:27 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/21 12:12:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,14 @@ void		check_reg(t_parce *pr, int *arg, t_code *new)
 	}
 	if (len > 2 || len == 0)
 		ft_error_pos("ERROR: invalid T_REG", pr->row, *pr->i);
-	str = ft_strsub(pr->line, i + 1, len);
+	if ((str = ft_strsub(pr->line, i + 1, len)) == NULL)
+		ft_error("ERROR: allocate memory");
 	num = ft_atoi(str);
 	if (num <= 0 || num > REG_NUMBER)
 		ft_error_pos("ERROR: invalid T_REG", pr->row, *pr->i);
 	free(str);
-	str = ft_strsub(pr->line, i, len + 1);
+	if ((str = ft_strsub(pr->line, i, len + 1)) == NULL)
+		ft_error("ERROR: allocate memory");
 	add_arg(new, str, arg, REG);
 	check_separator(pr);
 }

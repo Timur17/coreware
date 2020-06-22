@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 17:35:21 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/02/09 22:09:45 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/21 11:46:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,11 @@ char	*joinstr_free(char *s1, char *s2)
 {
 	char *str;
 
-	str = ft_strjoin(s1, s2);
+	if ((str = ft_strjoin(s1, s2)) == NULL)
+	{
+		ft_putstr("ERROR: allocate memory\n");
+		exit (0);
+	}
 	free(s1);
 	free(s2);
 	return (str);

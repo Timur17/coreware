@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 20:19:31 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/18 23:51:21 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/22 22:52:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 # include <fcntl.h>
 # include <limits.h>
 # include <unistd.h>
-# include <stdio.h>
 # include "libft/libft.h"
 # include "op.h"
 # include "command.h"
+# include "ft_printf/printf.h"
 
 # define DIR			"DIR"
 # define IND			"IND"
@@ -120,4 +120,5 @@ void					print_code(char *str);
 void					write_str(char *str, int fd);
 int						ft_valid_value(const char *str, int size);
 void					check_filename(char *name);
+void					valid_end_line(t_parce *pr, int i);
 #endif

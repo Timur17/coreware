@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/18 23:50:50 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/22 23:06:41 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,12 @@ void				check_line(t_parce *pr)
 	i = 0;
 	while (ft_space(pr->line[i]))
 		i++;
-	if (pr->line[i] == '\0')
+	if (pr->line[i] == '\0' || pr->line[i] == '#')
 		return ;
 	while (pr->line[i])
 		i++;
 	if (pr->line[--i] != '\n')
-	{
-		printf("Line %d don't have newline\n", pr->row);
-		exit(0);
-	}
+		ft_error_pos("Line don't have newline", pr->row, -1);
 }
 
 int					read_file(t_parce *pr)

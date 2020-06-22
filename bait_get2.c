@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:47:19 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 20:17:03 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/21 12:17:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ char			*additinal_code(char *src, int size)
 {
 	char		*add;
 
-	add = ft_strnew(size * 8);
+	if ((add = ft_strnew(size * 8)) == NULL)
+		ft_error("ERROR: allocate memory");
 	ft_memset(add, '0', size * 8);
 	full_code_size(src, add, (size * 8) - 1);
 	ft_change(add);
@@ -78,7 +79,8 @@ char			*get_dir_ind(char *ar, t_code *begin, t_code *cur, int size)
 	}
 	else
 		num = ft_atoi_long_new(ar, size);
-	str = ft_strnew(size * 2);
+	if ((str = ft_strnew(size * 2)) == NULL)
+		ft_error("ERROR: allocate memory");
 	ft_memset(str, '0', size * 2);
 	if (num >= 0)
 	{

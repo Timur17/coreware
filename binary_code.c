@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:47:19 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/18 23:20:07 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/21 12:02:47 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char				*get_code(t_code *cur, t_parce *pr)
 
 	i = 2;
 	pr->cure = cur;
-	str = ft_strnew(cur->size * i);
+	if ((str = ft_strnew(cur->size * i)) == NULL)
+		ft_error("ERROR: allocate memory");
 	ft_memcpy(str, command(cur->cmnd), i);
 	if (cur->type_args)
 	{
@@ -83,7 +84,8 @@ char				*transform(t_parce *pr, t_header *head, char *av)
 
 	pos = 0;
 	len = 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4 + pr->size_code;
-	bytecode = ft_strnew(len);
+	if ((bytecode = ft_strnew(len)) == NULL)
+		ft_error("ERROR: allocate memory");
 	int32_to_bytecode(bytecode, pos, COREWAR_EXEC_MAGIC, 4);
 	pos = pos + 4;
 	ft_memcpy(&bytecode[pos], head->prog_name, ft_strlen(head->prog_name));
@@ -92,7 +94,8 @@ char				*transform(t_parce *pr, t_header *head, char *av)
 	pos = pos + 4;
 	ft_memcpy(&bytecode[pos], head->comment, ft_strlen(head->comment));
 	pos = pos + COMMENT_LENGTH + 4;
-	str = ft_strnew(pr->size_code * 2);
+	if ((str = ft_strnew(pr->size_code * 2)) == NULL)
+		ft_error("ERROR: allocate memory");
 	ft_memset(str, '0', pr->size_code * 2);
 	full_command(pr, str, 0);
 	command_to_byte(str, bytecode, pos);
@@ -114,7 +117,7 @@ void				binary_code(t_parce *pr, char *av, t_header *head)
 	write(pr->fd, bytecode, len);
 	if (close(pr->fd))
 		ft_error("Can't close file");
-	printf("%s %s\n", "Writing output program to", name);
+	ft_printf("%s %s\n", "Writing output program to", name);
 	free(name);
 	free(bytecode);
 }

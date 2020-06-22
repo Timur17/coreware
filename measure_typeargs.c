@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 15:36:02 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/21 12:06:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ char			*ft_full(char *type)
 {
 	char		*temp;
 
-	temp = ft_strnew(2);
+	if ((temp = ft_strnew(2)) == NULL)
+		ft_error("ERROR: allocate memory");
 	if (ft_strcmp(type, DIR) == 0)
 		return (ft_strcat(temp, "10"));
 	else if (ft_strcmp(type, IND) == 0)

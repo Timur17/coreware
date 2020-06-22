@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 15:36:45 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/21 11:49:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ void				add_label(t_parce *pr)
 
 	i = check_label(pr);
 	new = init_code();
-	new->label = ft_strsub(pr->line, *pr->i, i - *pr->i);
+	if ((new->label = ft_strsub(pr->line, *pr->i, i - *pr->i)) == NULL)
+		ft_error("ERROR: allocate memory");
 	new->l_conect = pr->cnt;
 	new->row = pr->row;
 	valid_labels(pr, new->label);

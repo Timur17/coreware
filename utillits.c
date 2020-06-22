@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:47:19 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/18 23:47:16 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/21 12:15:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ char						*replace_name(char *av, int size)
 {
 	char					*name;
 
-	name = ft_strnew(size + 2);
+	if ((name = ft_strnew(size + 2)) == NULL)
+		ft_error("ERROR: allocate memory");
 	ft_strncpy(name, av, size - 1);
 	name[size - 1] = 'c';
 	name[size++] = 'o';
 	name[size] = 'r';
-  // name = ft_strnew(size + 3);
+  // if ((name = ft_strnew(size + 3)) == NULL)
+	//ft_error("ERROR: allocate memory");
   // ft_strncpy(name,av, size - 2);
   // name[size - 2] = 'm';
   // name[size - 1] = '.';
