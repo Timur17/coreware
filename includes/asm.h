@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 20:19:31 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/22 22:52:37 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/23 02:44:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 # include <fcntl.h>
 # include <limits.h>
 # include <unistd.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include "op.h"
 # include "command.h"
-# include "ft_printf/printf.h"
+# include "../ft_printf/printf.h"
 
 # define DIR			"DIR"
 # define IND			"IND"

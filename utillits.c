@@ -6,14 +6,14 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:47:19 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/21 12:15:01 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/23 00:28:34 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-	unsigned int			g_i;
-	unsigned long long		g_num;
+unsigned int			g_i;
+unsigned long long		g_num;
 
 void						check_filename(char *name)
 {

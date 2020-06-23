@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wtorwold <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 22:06:55 by wtorwold          #+#    #+#             */
-/*   Updated: 2019/12/06 22:08:55 by wtorwold         ###   ########.fr       */
+/*   Updated: 2020/06/23 00:19:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int			ft_abs(int x, int y)
 	if (x > y)
 		return (x - y);
 	else
-		return (y -x);
-}	
+		return (y - x);
+}

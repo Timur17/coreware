@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 17:39:46 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/16 00:15:22 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/23 00:13:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static int				digit_len(long long num, int base, int len)
 	return (len);
 }
 
-static void				ft_transform
-				(long long num, int base, int len, char *str)
+static void				ft_transform(long long num,
+int base, int len, char *str)
 {
 	while (num != 0)
 	{
@@ -57,8 +57,6 @@ char					*ft_itoa_base_long(long long value, int base)
 		sign = -1;
 	}
 	len = digit_len(value, base, len);
-        // if ((str = (char *)malloc(sizeof(char) * (len + 1))) == NULL); //sega
-        //         return (NULL);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	str[len--] = '\0';
 	ft_transform(value, base, len, str);

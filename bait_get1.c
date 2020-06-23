@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:47:19 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/21 12:17:45 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/22 23:36:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char			*get_reg(char *ar)
 	int			len_2;
 	char		*type;
 
-	type = ft_itoa_base(ft_atoi(ar), 16);
+	if ((type = ft_itoa_base(ft_atoi(ar), 16)) == NULL)
+		ft_error("ERROR: allocate memory");
 	len_2 = 1;
 	len = (int)ft_strlen(type) - 1;
 	str = ft_memset(ft_strnew(2), '0', 2);

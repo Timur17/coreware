@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/21 11:49:21 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/22 23:48:47 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void				add_command(t_parce *pr)
 
 	i = check_command(pr);
 	new = init_code();
-	new->cmnd = ft_strsub(pr->line, *pr->i, i);
+	if ((new->cmnd = ft_strsub(pr->line, *pr->i, i)) == NULL)
+		ft_error("ERROR: allocate memory");
 	new->l_conect = pr->cnt++;
 	*pr->i = *pr->i + i;
 	new->row = pr->row;

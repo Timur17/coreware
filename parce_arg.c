@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/21 12:12:54 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/23 00:26:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ void		check_reg(t_parce *pr, int *arg, t_code *new)
 
 	num = 0;
 	len = 0;
-	i = *pr->i;
-	(*pr->i)++;
+	i = (*pr->i)++;
 	while (ft_isdigit(pr->line[(*pr->i)]))
 	{
 		(*pr->i)++;

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:47:19 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/21 12:17:09 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/22 23:44:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ void			full_code_size_neg(char *src, char *str, int size)
 
 	add = additinal_code(src, size);
 	dec = ft_atoi_base(add, 2) + 1;
-	oct = ft_itoa_base_long(dec, 16);
+	if ((oct = ft_itoa_base_long(dec, 16)) == NULL)
+		ft_error("ERROR: allocate memory");
 	full_code_size(oct, str, (size * 2) - 1);
 	free(add);
 	free(src);

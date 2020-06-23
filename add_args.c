@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/15 01:29:40 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/22 23:53:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,10 @@ char		*add_arg_lable(t_parce *pr)
 	}
 	if (len == 0)
 		ft_error_pos("ERROR: invalid label", pr->row, *pr->i);
-	str = ft_strsub(pr->line, i, len);
-	leak = ft_strjoin(":", str);
+	if ((str = ft_strsub(pr->line, i, len)) == NULL)
+		ft_error("ERROR: allocate memory");
+	if ((leak = ft_strjoin(":", str)) == NULL)
+		ft_error("ERROR: allocate memory");
 	free(str);
 	str = leak;
 	return (str);
@@ -77,6 +79,7 @@ char		*add_arg_digit(t_parce *pr)
 	}
 	if (num == 0)
 		ft_error_pos("ERROR: invalid digit", pr->row, *pr->i);
-	str = ft_strsub(pr->line, i, num + neg);
+	if ((str = ft_strsub(pr->line, i, num + neg)) == NULL)
+		ft_error("ERROR: allocate memory");
 	return (str);
 }
