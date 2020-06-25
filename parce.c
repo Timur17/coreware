@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/22 23:06:41 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/25 12:20:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,6 @@ void				parce(t_parce *pr, t_header *head)
 			ft_error_pos("ERROR: Unexpected symvol", pr->row, *pr->i);
 	}
 	if (pr->comment == 0 || pr->name == 0)
-		ft_error("Error file is emty");
-	error_size_code(pr, head);
+		ft_error("ERROR: Lack of name or comment");
+	error_size_code(pr);
 }

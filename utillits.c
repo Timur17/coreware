@@ -6,14 +6,14 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:47:19 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/23 00:28:34 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/25 12:30:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-unsigned int			g_i;
-unsigned long long		g_num;
+unsigned int				g_i;
+unsigned long long			g_num;
 
 void						check_filename(char *name)
 {
@@ -34,14 +34,6 @@ char						*replace_name(char *av, int size)
 	name[size - 1] = 'c';
 	name[size++] = 'o';
 	name[size] = 'r';
-  // if ((name = ft_strnew(size + 3)) == NULL)
-	//ft_error("ERROR: allocate memory");
-  // ft_strncpy(name,av, size - 2);
-  // name[size - 2] = 'm';
-  // name[size - 1] = '.';
-  // name[size++] = 'c';
-  // name[size++] = 'o';
-  // name[size] = 'r';
 	return (name);
 }
 
@@ -59,7 +51,7 @@ void						int32_to_bytecode(char *data, int32_t pos,
 	}
 }
 
-long			ft_change_size(long long num, int size, int neg)
+long						ft_change_size(long long num, int size, int neg)
 {
 	long long				res;
 
@@ -70,7 +62,7 @@ long			ft_change_size(long long num, int size, int neg)
 	return (res);
 }
 
-long long		ft_atoi_long_new(const char *str, int size)
+long long					ft_atoi_long_new(const char *str, int size)
 {
 	int						neg;
 

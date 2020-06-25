@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 17:39:46 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/23 00:20:54 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/25 12:33:59 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ char					*ft_itoa_base(int value, int base)
 	str[len--] = '\0';
 	ft_transform((long)value, base, len, str);
 	if (base == 10 && sign == -1)
-	str[0] = '-';
+		str[0] = '-';
 	return (str);
 }

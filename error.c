@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 16:38:32 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/22 23:05:59 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/25 12:18:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void		ft_error_pos(char *str, int row, int col)
 	exit(EXIT_FAILURE);
 }
 
-void		error_size_code(t_parce *pr, t_header *head)
+void		error_size_code(t_parce *pr)
 {
 	if (pr->size_code == 0)
 		ft_error("ERROR:there are no commands");
