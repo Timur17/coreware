@@ -30,5 +30,5 @@ live:
 </pre>
 Результат выполнение программы asm
 
-![Пример](https://github.com/Timur17/coreware/blob/master/bytecode.png)
+![Пример](https://github.com/Timur17/coreware/blob/master/others/bytecode.png)
 
