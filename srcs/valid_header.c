@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 17:39:46 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/22 23:04:45 by marvin           ###   ########.fr       */
+/*   Updated: 2020/07/10 22:20:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,8 @@ void	ft_full_name_com(t_parce *pr, t_header *head, int d)
 	free(str);
 }
 
-void	full_header(t_parce *pr, t_header *head, int d, int len)
+void	full_header(t_parce *pr, t_header *head, int d)
 {
-	char	*str;
-	int		length;
 	char	*dst;
 
 	dst = (d == 5) ? head->prog_name : head->comment;

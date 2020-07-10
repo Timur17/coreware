@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:47:19 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/21 12:02:47 by marvin           ###   ########.fr       */
+/*   Updated: 2020/07/10 22:25:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void				command_to_byte(char *str, char *bytecode, int pos)
 	}
 }
 
-char				*transform(t_parce *pr, t_header *head, char *av)
+char				*transform(t_parce *pr, t_header *head)
 {
 	int32_t			len;
 	int32_t			pos;
@@ -110,7 +110,7 @@ void				binary_code(t_parce *pr, char *av, t_header *head)
 	int				len;
 
 	len = 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4 + pr->size_code;
-	bytecode = transform(pr, head, av);
+	bytecode = transform(pr, head);
 	name = replace_name(av, ft_strlen(av));
 	if ((pr->fd = open(name, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
 		ft_error("Can't create file");

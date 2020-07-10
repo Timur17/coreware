@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 20:19:31 by wtorwold          #+#    #+#             */
-/*   Updated: 2020/06/25 12:32:20 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/25 18:46:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct			s_parce
 
 void					parce(t_parce *pr, t_header *head);
 void					full_header
-						(t_parce *pr, t_header *head, int d, int len);
+						(t_parce *pr, t_header *head, int d);
 int						read_file(t_parce *pr);
 void					ft_error(char *str);
 void					ft_error_pos(char *str, int row, int col);

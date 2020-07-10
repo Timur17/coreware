@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_float.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wtorwold <wtorwold@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 17:47:46 by skrystin          #+#    #+#             */
-/*   Updated: 2019/07/16 20:22:02 by wtorwold         ###   ########.fr       */
+/*   Updated: 2020/06/26 17:08:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,12 @@ void		ft_print_f_help(t_pattern tmp, long double nbr, int byte)
 
 void		ft_print_f(t_pattern tmp, long double nbr)
 {
-	int			i;
 	int			byte;
 	t_form_lf	n;
 	int			step;
 
 	n.f = nbr;
 	step = n.bytes.exponent - 16383;
-	i = 0;
 	byte = 63;
 	if (((double)nbr == 0.0 / 0.0 || (double)nbr == 1.0 / 0.0
 	|| (double)nbr == -1.0 / 0.0) && !tmp.m)

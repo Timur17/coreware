@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_itoa_base_printf.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 21:05:41 by skrystin          #+#    #+#             */
-/*   Updated: 2020/06/19 10:28:52 by marvin           ###   ########.fr       */
+/*   Updated: 2020/06/26 17:09:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-char			*ft_helpitoa(uintmax_t value, uintmax_t base,
+char			*ft_helpitoa(uintmax_t base,
 uintmax_t len, uintmax_t nbr)
 {
 	char		*res;
@@ -49,5 +49,5 @@ char			*ft_itoa_base_printf(uintmax_t value, long int base)
 		len++;
 	}
 	nbr = value;
-	return (ft_helpitoa(value, base, len, nbr));
+	return (ft_helpitoa(base, len, nbr));
 }
